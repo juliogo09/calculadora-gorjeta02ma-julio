@@ -17,6 +17,7 @@
     --regent-grey: #7F9D9F;
     --squeeze: #F3F9FA;
     --beetle-green: #547878;
+    --water-leaf: #9FE8DF;
 }
 body {
     font-size: 1.6rem;
@@ -35,7 +36,7 @@ main {
     background: var(--white);
     padding: 3.2rem 2.4rem;
 
-    border-radius: 2.5rem; 2.5rem 0  8;
+    border-radius: 2.5rem 2.5rem 0  8;
 }
 
 .info {
@@ -117,12 +118,13 @@ main {
     background: var(--sherpa-blue);
     border-radius: 1.5rem;
     padding: 2.4rem;
-    .amount, 
+
+    .tip-amount,
     .total {
         display: flex;
         justify-content: space-between;
-        align-items: center;
-        margin-bottom: 2rem;
+        align-items: center; 
+        margin-bottom: 2rem;         
 
         p {
             color: var(--white);
@@ -137,16 +139,66 @@ main {
             font-size: 3.2rem;
         }
    }
-   buttom {
+   button {
         margin-top: 1.6rem; 
-        height: 100%;
+        width: 100%;
         background: var(--topaz);
         border: none;
         border-radius: .5rem;
         padding-block: .9rem;
         font-size: 2rem;
-        color:var(--sherpa-blue);
+        color: var(--sherpa-blue);
         font-weight: 700;
         text-transform: uppercase;
    }
+}
+
+@media(min-width: 920px) {
+    header {
+        margin-top: 5rem;
+    }
+    main {
+        display: flex;
+        max-width: 92rem;
+        margin-inline: auto;
+        padding: 4.8rem;
+        border-radius: 2.5rem;
+        gap: 4.8rem;
+        
+        section {
+            width: 100%;
+        } 
+    }
+    .info {
+      .tip div {
+        grid-template-columns: repeat(3, 1fr);
+
+        button:hover {
+            background: var(--topaz);
+            cursor: pointer;
+            transition: .3s;
+        }
+      }  
+    }
+    input::-webkit-inner-spin-button,
+    input::-webkit-outer-spin-button {
+        display: none;
+    }  
+    .results {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 4rem;
+
+        .tip-amount strong,
+        .total strong {
+             font-size: 4.8rem;
+        }
+
+        button:hover {
+            background: var(--water-leaf);
+            transition: .3s;
+            cursor: pointer;
+        }
+    }       
 }
